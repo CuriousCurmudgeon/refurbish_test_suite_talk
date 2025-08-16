@@ -1,9 +1,9 @@
-defmodule RefurbishTestSuiteTalkWeb.Layouts do
+defmodule RefurbishWeb.Layouts do
   @moduledoc """
   This module holds layouts and related functionality
   used by your application.
   """
-  use RefurbishTestSuiteTalkWeb, :html
+  use RefurbishWeb, :html
 
   # Embed all files in layouts/* within this module.
   # The default root.html.heex file contains the HTML

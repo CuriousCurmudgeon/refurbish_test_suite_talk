@@ -1,4 +1,4 @@
-defmodule RefurbishTestSuiteTalkWeb.Gettext do
+defmodule RefurbishWeb.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
@@ -6,7 +6,7 @@ defmodule RefurbishTestSuiteTalkWeb.Gettext do
   that you can use in your application. To use this Gettext backend module,
   call `use Gettext` and pass it as an option:
 
-      use Gettext, backend: RefurbishTestSuiteTalkWeb.Gettext
+      use Gettext, backend: RefurbishWeb.Gettext
 
       # Simple translation
       gettext("Here is the string to translate")
@@ -21,5 +21,5 @@ defmodule RefurbishTestSuiteTalkWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext.Backend, otp_app: :refurbish_test_suite_talk
+  use Gettext.Backend, otp_app: :refurbish
 end

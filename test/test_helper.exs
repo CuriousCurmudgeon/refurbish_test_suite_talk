@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(RefurbishTestSuiteTalk.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Refurbish.Repo, :manual)

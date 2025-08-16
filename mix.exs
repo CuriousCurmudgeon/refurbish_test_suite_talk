@@ -1,9 +1,9 @@
-defmodule RefurbishTestSuiteTalk.MixProject do
+defmodule Refurbish.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :refurbish_test_suite_talk,
+      app: :refurbish,
       version: "0.1.0",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -20,7 +20,7 @@ defmodule RefurbishTestSuiteTalk.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {RefurbishTestSuiteTalk.Application, []},
+      mod: {Refurbish.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -82,10 +82,10 @@ defmodule RefurbishTestSuiteTalk.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind refurbish_test_suite_talk", "esbuild refurbish_test_suite_talk"],
+      "assets.build": ["tailwind refurbish", "esbuild refurbish"],
       "assets.deploy": [
-        "tailwind refurbish_test_suite_talk --minify",
-        "esbuild refurbish_test_suite_talk --minify",
+        "tailwind refurbish --minify",
+        "esbuild refurbish --minify",
         "phx.digest"
       ],
       precommit: ["compile --warning-as-errors", "deps.unlock --unused", "format", "test"]

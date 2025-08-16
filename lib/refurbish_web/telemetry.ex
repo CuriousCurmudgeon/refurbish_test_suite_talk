@@ -1,4 +1,4 @@
-defmodule RefurbishTestSuiteTalkWeb.Telemetry do
+defmodule RefurbishWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -53,23 +53,23 @@ defmodule RefurbishTestSuiteTalkWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("refurbish_test_suite_talk.repo.query.total_time",
+      summary("refurbish.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("refurbish_test_suite_talk.repo.query.decode_time",
+      summary("refurbish.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("refurbish_test_suite_talk.repo.query.query_time",
+      summary("refurbish.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("refurbish_test_suite_talk.repo.query.queue_time",
+      summary("refurbish.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("refurbish_test_suite_talk.repo.query.idle_time",
+      summary("refurbish.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -87,7 +87,7 @@ defmodule RefurbishTestSuiteTalkWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {RefurbishTestSuiteTalkWeb, :count_users, []}
+      # {RefurbishWeb, :count_users, []}
     ]
   end
 end

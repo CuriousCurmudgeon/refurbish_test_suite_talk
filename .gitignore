@@ -23,7 +23,7 @@ erl_crash.dump
 /tmp/
 
 # Ignore package tarball (built via "mix hex.build").
-refurbish_test_suite_talk-*.tar
+refurbish-*.tar
 
 # Ignore assets that are produced by build tools.
 /priv/static/assets/
@@ -34,4 +34,3 @@ refurbish_test_suite_talk-*.tar
 # In case you use Node.js/npm, you want to ignore these.
 npm-debug.log
 /assets/node_modules/
-

@@ -1,5 +1,5 @@
-defmodule RefurbishTestSuiteTalkWeb.PageControllerTest do
-  use RefurbishTestSuiteTalkWeb.ConnCase
+defmodule RefurbishWeb.PageControllerTest do
+  use RefurbishWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

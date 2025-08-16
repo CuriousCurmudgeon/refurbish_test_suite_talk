@@ -1,4 +1,4 @@
-defmodule RefurbishTestSuiteTalkWeb.CoreComponents do
+defmodule RefurbishWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -27,7 +27,7 @@ defmodule RefurbishTestSuiteTalkWeb.CoreComponents do
 
   """
   use Phoenix.Component
-  use Gettext, backend: RefurbishTestSuiteTalkWeb.Gettext
+  use Gettext, backend: RefurbishWeb.Gettext
 
   alias Phoenix.LiveView.JS
 
@@ -457,9 +457,9 @@ defmodule RefurbishTestSuiteTalkWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(RefurbishTestSuiteTalkWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(RefurbishWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(RefurbishTestSuiteTalkWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(RefurbishWeb.Gettext, "errors", msg, opts)
     end
   end
 

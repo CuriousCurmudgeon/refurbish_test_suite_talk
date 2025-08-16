@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :refurbish_test_suite_talk, RefurbishTestSuiteTalk.Repo,
+config :refurbish, Refurbish.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "refurbish_test_suite_talk_dev",
+  database: "refurbish_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,7 +16,7 @@ config :refurbish_test_suite_talk, RefurbishTestSuiteTalk.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :refurbish_test_suite_talk, RefurbishTestSuiteTalkWeb.Endpoint,
+config :refurbish, RefurbishWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: String.to_integer(System.get_env("PORT") || "4000")],
@@ -25,9 +25,8 @@ config :refurbish_test_suite_talk, RefurbishTestSuiteTalkWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "2YPy6T5b2/fPpB5651mhKlXm7E24af2ZUMJ79u2CWGeYBexkuKn9Fe0ySKmtyTjM",
   watchers: [
-    esbuild:
-      {Esbuild, :install_and_run, [:refurbish_test_suite_talk, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:refurbish_test_suite_talk, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:refurbish, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:refurbish, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -54,18 +53,18 @@ config :refurbish_test_suite_talk, RefurbishTestSuiteTalkWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :refurbish_test_suite_talk, RefurbishTestSuiteTalkWeb.Endpoint,
+config :refurbish, RefurbishWeb.Endpoint,
   live_reload: [
     web_console_logger: true,
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/refurbish_test_suite_talk_web/(?:controllers|live|components|router)/?.*\.(ex|heex)$"
+      ~r"lib/refurbish_web/(?:controllers|live|components|router)/?.*\.(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :refurbish_test_suite_talk, dev_routes: true
+config :refurbish, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :default_formatter, format: "[$level] $message\n"

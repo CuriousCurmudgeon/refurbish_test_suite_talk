@@ -1,4 +1,4 @@
-# RefurbishTestSuiteTalk
+# Refurbish
 
 To start your Phoenix server:
 
